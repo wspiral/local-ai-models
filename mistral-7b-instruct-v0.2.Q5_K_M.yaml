@@ -1,0 +1,44 @@
+name: "mistral"
+
+description: |
+  This is a mistral model
+
+license: "https://ai.meta.com/llama/license/"
+urls:
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
+
+config_file: |
+  name: mistral
+  context_size: 32768
+  f16: true
+  mmap: true
+  threads: 8
+  parameters:
+    model: huggingface@TheBloke/Mistral-7B-Instruct-v0.2-GGUF/mistral-7b-instruct-v0.2.Q5_K_M.gguf
+    temperature: 0.2
+    top_k: 40
+    top_p: 0.95
+  template:
+    chat_message: chatml
+    chat: chatml-block
+    completion: completion
+  stopwords:
+  - <|im_end|>
+
+prompt_templates:
+- name: "chatml"
+  content: |
+    <|im_start|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}
+    {{if .Content}}{{.Content}}{{end}}
+    <|im_end|>
+- name: "chatml-block"
+  content: |
+    {{.Input}}
+    <|im_start|>assistant
+- name: "completion"
+  content: |
+    {{.Input}}
+    
+files:
+- filename: "mistral-7b-instruct-v0.2.Q5_K_M.gguf"
+  uri: "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q5_K_M.gguf"
