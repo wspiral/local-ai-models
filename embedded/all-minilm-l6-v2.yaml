@@ -11,3 +11,9 @@ usage: |
       "input": "Your text string goes here",
       "model": "all-minilm-l6-v2"
     }'
+
+files:
+- filename: "pytorch_model.bin"
+  sha256: "c3a85f238711653950f6a79ece63eb0ea93d76f6a6284be04019c53733baf256"
+  uri: "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/pytorch_model.bin"
+
