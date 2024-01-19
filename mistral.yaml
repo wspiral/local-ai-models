@@ -11,9 +11,9 @@ config_file: |
   name: mistral
   context_size: 4096
   f16: true
-  gpu_layers: 20
+  gpu_layers: 33
   mmap: true
-  threads: 4
+  threads: 14
   parameters:
     model: mistral-7b-openorca.Q6_K.gguf
     temperature: 0.2
