@@ -11,7 +11,7 @@ config_file: |
   name: mistral
   context_size: 4096
   f16: true
-  gpu_layers: 33
+  gpu_layers: 20
   mmap: true
   threads: 4
   parameters:
