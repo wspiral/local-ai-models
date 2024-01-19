@@ -1,4 +1,4 @@
-name: "mistral"
+name: "mistral-7b-instruct-v0.2.Q5_K_M"
 
 description: |
   This is a mistral model
