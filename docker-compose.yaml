@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  local-ai:
+    image: quay.io/go-skynet/local-ai:v2.5.1-cublas-cuda12
+    ports:
+      - "8080:8080"
+    # volumes:
+      # - ./mistral-7b-instruct-v0.2.Q5_K_M.yaml:/build/models/mistral-7b-instruct-v0.2.Q5_K_M.yaml
+      # - ./mistral.yaml:/build/models/mistral.yaml
+    environment:
+      DEBUG: "true"
+      F16: "true"
+      GPU_LAYERS: "33"
+      THREADS: "4"
+      CONTEXT_SIZE: "32768"
+      GALLERIES: "[{\"name\":\"model-gallery\", \"url\":\"github:go-skynet/model-gallery/index.yaml\"}, {\"url\": \"github:go-skynet/model-gallery/huggingface.yaml\",\"name\":\"huggingface\"}]"
+      PRELOAD_MODELS: "[{\"url\": \"https://raw.githubusercontent.com/go-skynet/model-gallery/main/mistral.yaml\",\"name\": \"mistral\"}]"
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
