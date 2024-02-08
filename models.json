@@ -1,0 +1,18 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/wspiral/local-ai-models/main/mistral.yaml",
+        "name": "mistral"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/wspiral/local-ai-models/main/mistral-7b-instruct-v0.2.Q5_K_M.yaml",
+        "name": "mistral-7b-instruct-v0.2.Q5_K_M"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/go-skynet/model-gallery/main/stablediffusion.yaml",
+        "name": "stablediffusion"
+    },
+    {
+        "name": "all-minilm-l6-v2",
+        "url": "https://raw.githubusercontent.com/wspiral/local-ai-models/main/embedded/bert-cpp.yaml"
+    }
+]

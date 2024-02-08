@@ -1,0 +1,33 @@
+name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m.gguf
+
+config_file: |
+  name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m.gguf
+  context_size: 32768
+  f16: true
+  gpu_layers: 33
+  threads: 14
+
+  parameters:
+    model: mistral-7b-instruct-v0.2.Q5_K_M.gguf
+    temperature: 0.2
+    top_k: 80
+    top_p: 0.7
+  template:
+    chat: chat
+    completion: completion
+files:
+- filename: "mistral-7b-instruct-v0.2.Q5_K_M.gguf"
+  uri: "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/blob/main/mistral-7b-instruct-v0.2.Q5_K_M.gguf"
+
+prompt_templates:
+- name: "chat"
+  content: |
+    Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+    ### Instruction:
+    {{.Input}}
+
+    ### Response:
+- name: "completion"
+  content: |
+    {{.Input}}
