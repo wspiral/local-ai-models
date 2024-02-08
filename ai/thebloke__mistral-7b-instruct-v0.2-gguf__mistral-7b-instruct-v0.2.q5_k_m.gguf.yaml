@@ -1,7 +1,7 @@
-name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m.gguf
+name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m
 
 config_file: |
-  name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m.gguf
+  name: thebloke__mistral-7b-instruct-v0.2-gguf__mistral-7b-instruct-v0.2.q5_k_m
   context_size: 32768
   f16: true
   gpu_layers: 33
