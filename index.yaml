@@ -1,0 +1,37 @@
+---
+# Custom LocalAI Models Gallery
+# Curated selection to avoid UI overload
+
+- url: "https://raw.githubusercontent.com/wspiral/local-ai-models/main/qwen3-14b-instruct.yaml"
+  name: "qwen3-14b-instruct"
+  description: "Qwen3-14B - Latest 14B model with thinking mode, perfect for RTX 3080 16GB"
+  license: "apache-2.0"
+  urls:
+    - https://huggingface.co/Qwen/Qwen3-14B
+    - https://huggingface.co/MaziyarPanahi/Qwen3-14B-GGUF
+  icon: "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
+  tags:
+    - llm
+    - gguf
+    - gpu
+    - cpu
+    - qwen
+    - qwen3
+    - reasoning
+
+- url: "https://raw.githubusercontent.com/wspiral/local-ai-models/main/llama3-8b-instruct.yaml"
+  name: "llama3-8b-instruct"
+  description: "Meta Llama 3 8B Instruct - Fast worker for parallel tasks and function calling"
+  license: "llama3"
+  urls:
+    - https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct
+    - https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF
+  icon: "https://raw.githubusercontent.com/meta-llama/llama-models/refs/heads/main/llama_models/resources/llama3_logo.png"
+  tags:
+    - llm
+    - gguf
+    - gpu
+    - cpu
+    - llama
+    - llama3
+    - function-calling

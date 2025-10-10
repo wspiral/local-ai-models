@@ -1,0 +1,42 @@
+name: "llama3-8b-instruct"
+
+description: |
+  Meta Llama 3 8B Instruct - Fast worker agent for parallel tasks.
+  Optimized for tool use, function calling, and quick responses.
+  Excellent for checking features, parsing docs, and general tasks.
+
+license: "llama3"
+urls:
+- https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct
+- https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF
+
+config_file: |
+  backend: llama-cpp
+  name: llama3-8b-instruct
+  context_size: 8192
+  f16: true
+  gpu_layers: 99
+  mmap: true
+  parameters:
+    model: Meta-Llama-3-8B-Instruct.Q4_K_M.gguf
+    temperature: 0.7
+    top_k: 40
+    top_p: 0.95
+  template:
+    chat: |
+      <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+      You are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>
+      {{.Input}}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+    chat_message: |
+      <|start_header_id|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}<|end_header_id|>
+      {{if .Content}}{{.Content}}{{end}}<|eot_id|>
+    completion: |
+      {{.Input}}
+  stopwords:
+  - <|eot_id|>
+  - <|end_of_text|>
+
+files:
+- filename: "Meta-Llama-3-8B-Instruct.Q4_K_M.gguf"
+  sha256: "660e12b50796e1d2b8793672cbbbb0e3b5cc1d891c6b1cc7c3d3fd04c2e5c39a"
+  uri: "huggingface://QuantFactory/Meta-Llama-3-8B-Instruct-GGUF/Meta-Llama-3-8B-Instruct.Q4_K_M.gguf"

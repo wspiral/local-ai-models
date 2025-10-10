@@ -1,0 +1,44 @@
+name: "qwen3-14b-instruct"
+
+description: |
+  Qwen3-14B is the latest 14B parameter model with thinking mode support.
+  Best balance of capability and speed for RTX 3080 16GB.
+  Excellent at reasoning, instruction-following, and multilingual support.
+
+license: "apache-2.0"
+urls:
+- https://huggingface.co/Qwen/Qwen3-14B
+- https://huggingface.co/MaziyarPanahi/Qwen3-14B-GGUF
+
+config_file: |
+  backend: llama-cpp
+  name: qwen3-14b-instruct
+  context_size: 32768
+  f16: true
+  gpu_layers: 99
+  mmap: true
+  parameters:
+    model: Qwen3-14B.Q4_K_M.gguf
+    temperature: 0.7
+    top_k: 40
+    top_p: 0.95
+  template:
+    chat: |
+      <|im_start|>system
+      You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+      <|im_start|>user
+      {{.Input}}<|im_end|>
+      <|im_start|>assistant
+    chat_message: |
+      <|im_start|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}
+      {{if .Content}}{{.Content}}{{end}}<|im_end|>
+    completion: |
+      {{.Input}}
+  stopwords:
+  - <|im_end|>
+  - <|endoftext|>
+
+files:
+- filename: "Qwen3-14B.Q4_K_M.gguf"
+  sha256: "ee624d4be12433277bb9a340d3e5aabf5eb68fc788a7048ee99917edaa46494a"
+  uri: "huggingface://MaziyarPanahi/Qwen3-14B-GGUF/Qwen3-14B.Q4_K_M.gguf"
