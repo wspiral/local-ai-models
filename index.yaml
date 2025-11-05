@@ -19,6 +19,24 @@
     - qwen3
     - reasoning
 
+- url: "https://raw.githubusercontent.com/wspiral/local-ai-models/main/qwen2.5-coder-14b.yaml"
+  name: "qwen2.5-coder-14b"
+  description: "Qwen2.5-Coder-14B - Specialized coding model, optimized for programming tasks"
+  license: "apache-2.0"
+  urls:
+    - https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct
+    - https://huggingface.co/MaziyarPanahi/Qwen2.5-Coder-14B-Instruct-GGUF
+  icon: "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
+  tags:
+    - llm
+    - gguf
+    - gpu
+    - cpu
+    - qwen
+    - qwen2.5
+    - coding
+    - programming
+
 - url: "https://raw.githubusercontent.com/wspiral/local-ai-models/main/llama3-8b-instruct.yaml"
   name: "llama3-8b-instruct"
   description: "Meta Llama 3 8B Instruct - Fast worker for parallel tasks and function calling"
