@@ -13,9 +13,10 @@ urls:
 config_file: |
   backend: llama-cpp
   name: qwen2.5-coder-14b
-  context_size: 32768
+  # Reduced context and GPU layers to avoid CUDA OOM on 16GB RTX 3080
+  context_size: 16384
   f16: true
-  gpu_layers: 99
+  gpu_layers: 33
   mmap: true
   parameters:
     model: Qwen2.5-Coder-14B-Instruct.Q5_K_M.gguf
